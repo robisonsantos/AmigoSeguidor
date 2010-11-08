@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>AmigoSeguidor</h1>
+    <p>
+      Olá
+     </p>
+      <p>
+      Você está sendo convidado para participar do grupo <%= @group.name %>.<br/>
+    </p>
+    <p>
+      Por favor, siga o seguinte link: <%= @url %> e acesse o site do AmigoSeguidor.
+    </p>
+    <p>Se você já é cadastrado, use o código no final desta mensagem para entrar para este grupo de amigo. Caso ainda não tenha cadastro no site, cadastre-se, é fácil!</p>
+    <p>
+      <b>Grupo:<b><i><%= @group.name %></i><br />
+      <b>Código:<b><i><%= @code %></i> 
+    </p>
+  </body>
+</html>

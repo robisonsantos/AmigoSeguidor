@@ -1,0 +1,3 @@
+$('#add_wishitem_link').html("<%= escape_javascript(render(:partial => 'add_wishitem_link', :locals => { :index => (params[:index].to_i + 1) })) %>");
+$('#wishitens').append("<%= escape_javascript(render(:partial => 'wishitem_fields', :locals => { :wi => @wishitem, :index => params[:index]})) %>");
+

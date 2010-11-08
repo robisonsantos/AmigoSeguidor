@@ -1,0 +1,21 @@
+<h1><%= current_user.name %></h1>
+
+<p><font color="red"><%= flash[:error] %></font></p>
+<p><font color="green"><%= flash[:notice] %></font></p>
+
+<%= link_to "Sair", sign_out_path %> |
+<%= link_to "Caixa de Mensagens", messages_path %> |
+<%= link_to "Criar Grupo", new_group_path %> |
+<%= link_to "Grupos", groups_path %> |
+<%= link_to "Nova lista de presentes", new_wishlist_path %>
+
+<br />
+<%= render :partial => "membership" %>
+
+<!-- TEMP CODE -->
+<hr />
+<h2>Listas </h2>
+<% @user.wishlists.each do |l|  %>
+  <%= link_to "Lists number#{l.id}", wishlist_path(l.id) %>
+<% end %>
+

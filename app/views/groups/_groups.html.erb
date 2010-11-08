@@ -1,0 +1,18 @@
+<% unless @groups.empty? %>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Criador</th>
+      <th/>
+    <tr>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= group.description %></td>
+        <td><%= group.owner.name %></td>        
+        <td><%= link_to "Participar", "#" %></td>
+      <tr>
+    <% end %>
+  <table>
+<% end %>

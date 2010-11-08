@@ -1,0 +1,9 @@
+<h1>Wishlists#index</h1>
+<p>Find me in app/views/wishlists/index.html.erb</p>
+
+<% @wishlists.each do |w| %>
+  <%= w.id %> <br />
+<% end %>
+
+<%= link_to "Voltar", user_root_path %>
+

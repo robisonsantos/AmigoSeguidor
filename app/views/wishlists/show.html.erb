@@ -1,0 +1,30 @@
+<% if @wishlist.user_id == current_user.id %>
+<h1>Wishlists#show</h1>
+<p>Find me in app/views/wishlists/show.html.erb</p>
+<h2>Itens:</h2>
+    <div id="wishitens"> 
+          <table id="wishlist">
+            <tr>
+               <th>Name</th>
+               <th>Description<th>
+               <th>URL<th>
+               <th>Category<th>
+            </tr>
+            <% @wishlist.wishitems.each_with_index do |item,index| %>
+              <% if(item) %>
+                <tr id="elem_<%=index%>" >
+                  <td><%= item.name %></td>
+                  <td><%= item.description %></td>
+                  <td><%= item.url %><td/>
+                  <td><%= item.category %><td/>
+                <tr/>
+              <% end %>
+            <% end %>
+          </table>
+    </div>
+
+<%= link_to "Edit", edit_wishlist_path(@wishlist) %> |
+<% else %>
+<p>Você está tendando acessar algo que não é seu... isso é muito feio</p>
+<% end %>
+<%= link_to "Back", user_root_path %>

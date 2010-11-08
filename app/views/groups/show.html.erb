@@ -1,0 +1,21 @@
+<h1><%= @group.name %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to "Meu Amigo Secreto", "/secret/#{@group.id}" %> |
+<%= link_to "Minha lista de presentes", "#" %> |
+<% if current_user.owns?(@group) %>
+  <%= render :partial => 'owner', :object => @group %>
+<% elsif current_user.admin?(@group) %>
+  <%= render :partial => 'admin', :object => @group %>
+<% end %>
+
+<p>
+  <b>Descrição:</b>
+  <%= @group.description %>
+</p>
+
+<%= render :partial => 'participants', :object => @group %><br /> 
+
+<%= link_to 'Voltar', user_root_path %>
+

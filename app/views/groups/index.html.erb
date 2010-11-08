@@ -1,0 +1,30 @@
+<h1>Grupos</h1>
+
+<p><font color="red"><%= flash[:error] %></font></p>
+<p><font color="green"><%= flash[:notice] %></font></p>
+
+<h3>Se você recebeu um código para participar de um grupo privado, entre com seu código no espaço abaixo e clique 'Participar' <h3>
+
+<% form_tag :controller => 'groups', :action => 'privategroup', :method => :post do %>
+  <p>
+    <%= text_field_tag :code, params[:code] %>
+    <%= submit_tag "Participar", :name => nil %>
+  </p>
+<% end %>
+
+
+<h3> Se você não possui um código, pode procurar por grupos públicos e enviar um pedido de ingresso para os administradores</h3>
+
+<% form_tag groups_path, :method => :get, :remote => true do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Procurar", :name => nil %>
+  </p>
+<% end %>
+
+<div id="groups" >
+  <%= render :partial => 'groups' %>
+</div>
+
+<%= link_to "Voltar", user_root_path %>
+

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  gift_price: 1.5
+  revelation_day: 2010-09-19 10:43:15
+  revelation_address: MyString
+  revelation_address_link: MyString
+
+two:
+  name: MyString
+  gift_price: 1.5
+  revelation_day: 2010-09-19 10:43:15
+  revelation_address: MyString
+  revelation_address_link: MyString

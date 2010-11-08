@@ -1,0 +1,36 @@
+<% form_for(@group) do |f| %>
+    <%= f.error_messages %>
+    <p>
+        <%= f.label :name, 'Nome do seu grupo:' %><br />
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :description, 'Descrição do grupo:' %><br />
+        <%= f.text_area :description %>
+    </p>
+    <p>
+        <%= f.label :gift_price, 'Valor do presente:' %><br />
+        <%= f.text_field :gift_price %>
+    </p>
+    <p>
+        <%= f.label :revelation_day, 'Data da revelação:' %><br />
+        <%= f.datetime_select :revelation_day %>
+    </p>
+    <p>
+        <%= f.label :revelation_address, 'Local da revelação:' %><br />
+        <%= f.text_field :revelation_address %>
+    </p>
+    <p>
+        <%= f.label :revelation_address_link, "Link para o endereço ("  %>
+        <%= link_to 'GMaps', 'http://maps.google.com.br',:target => "_blank" %> ) <br />
+        <%= f.text_field :revelation_address_link %>
+    </p>
+    <p>
+        <%= f.label :private, "Privado" %>
+        <%= f.check_box :private %> <span>Grupos privados não aparecerão na pesquisa por grupos </span><br/>
+    </p>
+    <p>
+        <%= f.submit 'Confirmar' %>
+    </p>
+<% end %>
+

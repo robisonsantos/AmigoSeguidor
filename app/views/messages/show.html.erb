@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>De:</b>
+  <%= @message.sender.name %>
+</p>
+
+<p>
+  <b>Para:</b>
+  <%= @message.receiver.name %>
+</p>
+
+<p>
+  <b>Assunto:</b>
+  <%= @message.subject %>
+</p>
+
+<p>
+  <b>Mensagem:</b>
+  <%= @message.body %>
+</p>
+
+<%= link_to 'Apagar', @message, :confirm => 'Certeza?', :method => :delete %>

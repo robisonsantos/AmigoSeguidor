@@ -1,0 +1,9 @@
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Adicionar Administradores', "#" %> |
+<%= link_to 'Apagar grupo', @group, :confirm => "Tem certeza que deseja apagar este grupo?", :method => 'delete' %> |
+<%= link_to 'Enviar convite', "/new_invitation/#{@group.id}" %> |
+<%= link_to 'Passar a bandeira', "#" %> <br/>
+
+<h2> Status dos participantes </h2>
+
+Tabel com nome do participante e status corrente

@@ -1,0 +1,23 @@
+<h1>Caixa de Mensagens</h1>
+<div id="left_menu" >
+  <ul>
+  <li><%= link_to "Sair", user_root_path %></li>
+  <li><%= link_to "Nova Mensagem", new_message_path, :remote => true %></li>
+  <li>Entrada</li>
+    <ul>
+    <% @memberships.each do |m| %>
+      <li><%= link_to m.group.name, messages_path(:received => true, :group => m.group.id), :remote => true %></li>
+    <% end %>
+    </ul>
+  <li>Saida</li>
+    <ul>
+    <% @memberships.each do |m| %>
+      <li><%= link_to m.group.name, messages_path(:sent => true, :group => m.group.id), :remote => true %></li>
+    <% end %>
+    </ul>
+  </ul>
+</div>
+
+<div id="message_view">
+
+</div>

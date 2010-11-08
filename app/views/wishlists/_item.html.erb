@@ -1,0 +1,10 @@
+<div id="wishitem" >
+  <%= form_for :wishitem, @wishitem do |wf| %>
+    <%= wf.hidden_field :index, :value => params[:index] %>    
+    <p><%= wf.label :name %><br/> <%= wf.text_field :name %></p>
+    <p><%= wf.label :description %> <br/> <%= wf.text_area :description %></p>
+    <p><%= wf.label :url %> <br/> <%= wf.text_field :url %></p>
+    <p><%= wf.label :category %> <br/> <%= wf.text_field :category %></p>
+    <%= wf.submit %>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<%= form_tag :controller => 'groups', :action => 'send_invitation', :method => :post do %>
+  <p>
+    <%= hidden_field_tag :group, params[:group], :value => @group.id %>
+    <p> 
+      Email:
+      <%= text_field_tag :email, params[:email] %>
+    </p>
+    <%= submit_tag "Enviar convite", :name => nil %>
+  </p>
+<% end %>
+<%= link_to "Voltar", group_path(@group) %>
+

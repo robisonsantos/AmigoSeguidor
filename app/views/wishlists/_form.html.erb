@@ -1,0 +1,48 @@
+<%= form_for(@wishlist) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id.to_s %>
+
+  <% if @wishlist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wishlist.errors.count, "error") %> prohibited this message from being saved:</h2>
+      <ul>
+      <% @wishlist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <h2>Itens:</h2>
+    <div id="wishitens"> 
+       <% if @itens %>
+          <table id="wishlist">
+            <tr>
+               <th>Name</th>
+               <th>Description<th>
+               <th>URL<th>
+               <th>Category<th>
+               <th></th>
+               <th></th>  
+            </tr>
+            <% @itens.each_with_index do |item,index| %>
+              <% if(item) %>
+                <tr id="elem_<%=index%>" >
+                  <td><%= item.name %></td>
+                  <td><%= item.description %></td>
+                  <td><%= item.url %><td/>
+                  <td><%= item.category %><td/>
+                  <%= link_to "Edit",   edit_item_path(:index => index),   :remote => true %> 
+                  <%= link_to "Delete", remove_item_path(:index => index), :remote => true %>    
+                <tr/>
+              <% end %>
+            <% end %>
+          </table>
+       <% end %>
+    </div>
+
+    <%= link_to "Add item", add_item_path, :remote => true %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

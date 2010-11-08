@@ -1,0 +1,15 @@
+<hr/>
+<% if messages.empty? %>
+<p>No messages</p>
+<% else %>
+  <table>
+    <tr>
+      <th> Subject </th>
+    <tr>
+  <% messages.each do |m| %>
+    <tr>
+      <td><%= link_to m.subject , message_path(m), :remote => true %><br/><td>
+    <tr>
+  <% end %>    
+  </table>
+<% end %>
